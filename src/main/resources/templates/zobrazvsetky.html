@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Otrasna  webaplikácia! -  Databazova časť</h1>
+
+<table> <!-- Poznamka  -->
+    <thead> <!-- Hlavicka tabulky -->
+    <tr> <!-- vytvorili sme riadok, ZACIATOK riadka -->
+        <th>Popis výdavku</th> <!-- th reprezentuje bunku daneho riadka -->
+        <th>Cena výdavku</th> <!-- th reprezentuje bunku daneho riadka -->
+        <th>Kategória</th> <!-- th reprezentuje bunku daneho riadka -->
+        <th>Dátum</th> <!-- th reprezentuje bunku daneho riadka -->
+    </tr> <!-- vytvorili sme riadok, KONIEC riadka -->
+    </thead> <!-- Koniec hlavicky tabulky -->
+    <tbody>
+    <tr th:each="vydavok:${vydavky}"> <!-- foreach podobne ako v Jave, ale tu prostrednictvom thymeleaf -->
+        <td th:text="${vydavok.popisVydavku}"></td>
+        <td th:text="${vydavok.suma}"></td>
+        <td th:text="${vydavok.kategoria}"></td>
+        <td th:text="${vydavok.datum}"></td>
+    </tr>
+
+    </tbody>
+
+</table>
+<br><br><br>
+<a href="/"> Späť na hlavnu stranku</a>
+</body>
+</html>
